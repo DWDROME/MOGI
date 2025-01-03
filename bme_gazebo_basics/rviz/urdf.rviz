@@ -1,155 +1,157 @@
 Panels:
-  - Class: rviz_common/Displays
-    Help Height: 70
-    Name: Displays
-    Property Tree Widget:
-      Expanded: ~
-      Splitter Ratio: 0.5
-    Tree Height: 289
-  - Class: rviz_common/Views
-    Expanded:
-      - /Current View1
-    Name: Views
-    Splitter Ratio: 0.5
+  - Class: rviz_common/Displays  # 显示面板类，用于管理显示的可视化内容
+    Help Height: 70             # 帮助区域的高度
+    Name: Displays              # 面板名称
+    Property Tree Widget:       # 属性树窗口配置
+      Expanded: ~               # 属性树是否展开，~ 表示默认未定义
+      Splitter Ratio: 0.5       # 属性窗口与显示内容的分割比例
+    Tree Height: 289            # 属性树的高度
+  - Class: rviz_common/Views    # 视图面板类，用于管理和配置视图
+    Expanded:                   # 展开的视图
+      - /Current View1          # 当前已展开的视图
+    Name: Views                 # 面板名称
+    Splitter Ratio: 0.5         # 属性窗口与内容区域的分割比例
+
 Visualization Manager:
-  Class: ""
-  Displays:
-    - Alpha: 0.5
-      Cell Size: 1
-      Class: rviz_default_plugins/Grid
-      Color: 160; 160; 164
-      Enabled: true
-      Line Style:
-        Line Width: 0.029999999329447746
-        Value: Lines
-      Name: Grid
-      Normal Cell Count: 0
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Plane: XY
-      Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
-      Value: true
-    - Alpha: 0.800000011920929
-      Class: rviz_default_plugins/RobotModel
-      Collision Enabled: false
-      Description File: ""
-      Description Source: Topic
-      Description Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /robot_description
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel:
+  Class: ""                     # 可视化管理器的类名，空字符串表示未指定
+  Displays:                     # 定义显示的内容列表
+    - Alpha: 0.5                # 网格透明度，范围0~1
+      Cell Size: 1              # 每个网格单元的大小
+      Class: rviz_default_plugins/Grid  # 网格显示使用的插件类
+      Color: 160; 160; 164      # 网格颜色（RGB格式）
+      Enabled: true             # 是否启用该网格
+      Line Style:               # 网格线样式
+        Line Width: 0.029999999329447746 # 网格线宽度
+        Value: Lines            # 网格线样式，设置为线条
+      Name: Grid                # 网格的名称
+      Normal Cell Count: 0      # 网格的默认单元格数量
+      Offset:                   # 网格的偏移量
+        X: 0                    # X轴偏移
+        Y: 0                    # Y轴偏移
+        Z: 0                    # Z轴偏移
+      Plane: XY                 # 网格所在的平面，设置为XY平面
+      Plane Cell Count: 10      # 平面网格单元格数量
+      Reference Frame: <Fixed Frame>  # 网格的参考框架
+      Value: true               # 是否启用网格
+    - Alpha: 0.800000011920929  # 机器人模型透明度
+      Class: rviz_default_plugins/RobotModel  # 机器人模型显示使用的插件类
+      Collision Enabled: false  # 是否显示机器人模型的碰撞属性
+      Description File: ""      # 机器人描述文件路径
+      Description Source: Topic # 机器人描述来源为Topic
+      Description Topic:        # 描述Topic的配置
+        Depth: 5                # 消息队列深度
+        Durability Policy: Volatile  # 消息持久性策略，设置为易失性
+        History Policy: Keep Last # 历史策略，保留最新消息
+        Reliability Policy: Reliable # 消息可靠性，设置为可靠
+        Value: /robot_description # Topic的名称
+      Enabled: true             # 是否启用机器人模型
+      Links:                    # 机器人模型的链接配置
+        All Links Enabled: true # 是否启用所有链接
+        Expand Joint Details: false # 是否展开关节详细信息
+        Expand Link Details: false  # 是否展开链接详细信息
+        Expand Tree: false        # 是否展开链接树
+        Link Tree Style: Links in Alphabetic Order  # 链接树的样式，按字母排序
+        base_footprint:           # 基本链接配置
+          Alpha: 1               # 链接透明度
+          Show Axes: false       # 是否显示坐标轴
+          Show Trail: false      # 是否显示轨迹
+        base_link:               # 基础链接
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_wheel:
+        left_wheel:              # 左轮链接
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-      Mass Properties:
-        Inertia: false
-        Mass: false
-      Name: RobotModel
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Class: rviz_default_plugins/TF
-      Enabled: true
-      Filter (blacklist): ""
-      Filter (whitelist): ""
-      Frame Timeout: 15
-      Frames:
-        All Enabled: true
-        base_footprint:
+        right_wheel:             # 右轮链接
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
           Value: true
-        base_link:
+      Mass Properties:           # 质量属性配置
+        Inertia: false           # 是否显示惯性属性
+        Mass: false              # 是否显示质量属性
+      Name: RobotModel           # 机器人模型名称
+      TF Prefix: ""              # 坐标系前缀
+      Update Interval: 0         # 更新间隔，单位秒
+      Value: true                # 是否启用显示
+      Visual Enabled: true       # 是否启用可视化显示
+    - Class: rviz_default_plugins/TF  # 使用TF插件显示坐标系
+      Enabled: true             # 是否启用
+      Filter (blacklist): ""    # 黑名单过滤器
+      Filter (whitelist): ""    # 白名单过滤器
+      Frame Timeout: 15         # 帧超时时间
+      Frames:                   # 坐标系配置
+        All Enabled: true       # 是否启用所有帧
+        base_footprint:         # 基本足迹帧
+          Value: true           # 是否启用
+        base_link:              # 基础链接帧
           Value: true
-        left_wheel:
+        left_wheel:             # 左轮帧
           Value: true
-        right_wheel:
+        right_wheel:            # 右轮帧
           Value: true
-      Marker Scale: 1
-      Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: false
-      Tree:
+      Marker Scale: 1           # 标记的缩放比例
+      Name: TF                  # 显示的名称
+      Show Arrows: true         # 是否显示箭头
+      Show Axes: true           # 是否显示坐标轴
+      Show Names: false         # 是否显示坐标系名称
+      Tree:                     # 坐标系的层次结构
         base_footprint:
           base_link:
             left_wheel:
               {}
             right_wheel:
               {}
-      Update Interval: 0
-      Value: true
-  Enabled: true
-  Global Options:
-    Background Color: 48; 48; 48
-    Fixed Frame: base_link
-    Frame Rate: 30
-  Name: root
-  Tools:
-    - Class: rviz_default_plugins/MoveCamera
-  Transformation:
+      Update Interval: 0        # 更新间隔时间
+      Value: true               # 是否启用TF显示
+  Enabled: true                 # 是否启用可视化管理器
+  Global Options:               # 全局选项
+    Background Color: 48; 48; 48 # 背景颜色
+    Fixed Frame: base_link      # 固定框架名称
+    Frame Rate: 30              # 帧率设置
+  Name: root                    # 可视化管理器名称
+  Tools:                        # 工具列表
+    - Class: rviz_default_plugins/MoveCamera  # 摄像机移动工具
+  Transformation:               # 坐标系转换配置
     Current:
-      Class: rviz_default_plugins/TF
-  Value: true
-  Views:
-    Current:
-      Class: rviz_default_plugins/Orbit
-      Distance: 1.7000000476837158
-      Enable Stereo Rendering:
-        Stereo Eye Separation: 0.05999999865889549
-        Stereo Focal Distance: 1
-        Swap Stereo Eyes: false
-        Value: false
-      Focal Point:
+      Class: rviz_default_plugins/TF  # 当前使用的TF插件
+  Value: true                   # 启用可视化管理器
+  Views:                        # 视图配置
+    Current:                    # 当前视图
+      Class: rviz_default_plugins/Orbit  # 使用的轨道视图插件
+      Distance: 1.7000000476837158 # 相机距离
+      Enable Stereo Rendering:  # 是否启用立体渲染
+        Stereo Eye Separation: 0.05999999865889549 # 双眼分离距离
+        Stereo Focal Distance: 1 # 焦距
+        Swap Stereo Eyes: false # 是否交换双眼
+        Value: false            # 是否启用立体渲染
+      Focal Point:              # 焦点位置
         X: 0
         Y: 0
         Z: 0
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: false
-      Name: Current View
-      Near Clip Distance: 0.009999999776482582
-      Pitch: 0.33000001311302185
-      Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 5.5
-    Saved: ~
+      Focal Shape Fixed Size: true # 焦点形状固定大小
+      Focal Shape Size: 0.05000000074505806 # 焦点形状的大小
+      Invert Z Axis: false      # 是否反转Z轴
+      Name: Current View        # 当前视图名称
+      Near Clip Distance: 0.009999999776482582 # 最近裁剪距离
+      Pitch: 0.33000001311302185 # 俯仰角度
+      Target Frame: <Fixed Frame> # 目标框架
+      Value: Orbit (rviz)       # 视图类型
+      Yaw: 5.5                  # 偏航角度
+    Saved: ~                    # 已保存的视图
+
 Window Geometry:
   Displays:
-    collapsed: false
-  Height: 800
-  Hide Left Dock: false
-  Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000001c9000002c2fc0200000002fb000000100044006900730070006c006100790073010000003f000001a7000000cc00fffffffb0000000a0056006900650077007301000001ec00000115000000a900ffffff000002e1000002c200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+    collapsed: false            # 显示区域是否折叠
+  Height: 800                   # 窗口高度
+  Hide Left Dock: false         # 是否隐藏左侧停靠栏
+  Hide Right Dock: false        # 是否隐藏右侧停靠栏
+  QMainWindow State: 000000ff00000000fd0000000100000000000001c9000002c2fc0200000002fb000000100044006900730070006c006100790073010000003f000001a7000000cc00fffffffb0000000a0056006900650077007301000001ec00000115000000a900ffffff000002e1000002c200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000 # 窗口状态
   Views:
-    collapsed: false
-  Width: 1200
-  X: 234
-  Y: 260
+    collapsed: false            # 视图区域是否折叠
+  Width: 1200                   # 窗口宽度
+  X: 234                        # 窗口X轴位置
+  Y: 260                        # 窗口Y轴位置
